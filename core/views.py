@@ -196,6 +196,8 @@ class CheckoutView(View):
                     return redirect('core:payment', payment_option='stripe')
                 elif payment_option == 'P':
                     return redirect('core:payment', payment_option='paypal')
+                elif payment_option == 'R':
+                    return redirect('core:payment',payment_option='razorpay')
                 else:
                     messages.warning(
                         self.request, "Invalid payment option selected")
